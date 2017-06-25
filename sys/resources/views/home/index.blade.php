@@ -7,11 +7,9 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    Carbon Notes
+                    @include('shared.server_status', ['isRunning' => $carbonNotesIsRunning])
 
-                    <div class="pull-right">
-                        @include('shared.pingtest', ['url' => 'https://carbon-notes.de'])
-                    </div>
+                    Carbon Notes
                 </h4>
                 <p>Simple note taking with many features.</p>
                 <a href="https://www.carbon-notes.de" class="btn btn-primary">Visit site</a>
@@ -21,11 +19,9 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    1. Sternenflotten Division
+                    @include('shared.server_status', ['isRunning' => $sternenflottenDivisionIsRunning])
 
-                    <div class="pull-right">
-                        @include('shared.pingtest', ['url' => 'https://sternenflotten-division.net'])
-                    </div>
+                    1. Sternenflotten Division
                 </h4>
                 <p>Online Star Trek roleplay community.</p>
                 <a href="https://www.sternenflotten-division.net" class="btn btn-primary">Visit site</a>
@@ -37,11 +33,9 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    Network Gaming Clan
+                    @include('shared.server_status', ['isRunning' => $networkGamingClanIsRunning])
 
-                    <div class="pull-right">
-                        @include('shared.pingtest', ['url' => 'https://network-gaming-clan.de'])
-                    </div>
+                    Network Gaming Clan
                 </h4>
                 <p>Clansite.</p>
                 <a href="https://www.network-gaming-clan.de" class="btn btn-primary">Visit site</a>
@@ -51,11 +45,9 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    Asphyxiated Dreams
+                    @include('shared.server_status', ['isRunning' => $asphyxiatedDreamsIsRunning])
 
-                    <div class="pull-right">
-                        @include('shared.pingtest', ['url' => 'https://asphyxiated-dreams.de'])
-                    </div>
+                    Asphyxiated Dreams
                 </h4>
                 <p>Page of my former band.</p>
                 <a href="https://www.asphyxiated-dreams.de" class="btn btn-primary">Visit site</a>
@@ -65,11 +57,9 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    Last Escape
+                    @include('shared.server_status', ['isRunning' => $lastEscapeIsRunning])
 
-                    <div class="pull-right">
-                        @include('shared.pingtest', ['url' => 'https://last-escape.net'])
-                    </div>
+                    Last Escape
                 </h4>
                 <p>Former browsergame project.</p>
                 <a href="https://www.last-escape.net" class="btn btn-primary">Visit site</a>
@@ -84,11 +74,9 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    Wallabag
+                    @include('shared.server_status', ['isRunning' => $wallabagIsRunning])
 
-                    <div class="pull-right">
-                        @include('shared.pingtest', ['url' => 'https://wallabag.andreas-wiedel.de'])
-                    </div>
+                    Wallabag
                 </h4>
                 <p>Read it later app.</p>
                 <a href="https://wallabag.andreas-wiedel.de" class="btn btn-primary">Visit site</a>
@@ -98,11 +86,9 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    Fresh RSS
+                    @include('shared.server_status', ['isRunning' => $rssIsRunning])
 
-                    <div class="pull-right">
-                        @include('shared.pingtest', ['url' => 'https://rss.andreas-wiedel.de'])
-                    </div>
+                    Fresh RSS
                 </h4>
                 <p>RSS aggregator.</p>
                 <a href="https://rss.andreas-wiedel.de" class="btn btn-primary">Visit site</a>
@@ -112,14 +98,37 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    Monica
+                    @include('shared.server_status', ['isRunning' => $monicaIsRunning])
 
-                    <div class="pull-right">
-                        @include('shared.pingtest', ['url' => 'https://monica.andreas-wiedel.de'])
-                    </div>
+                    Monica
                 </h4>
                 <p>Personal CRM app.</p>
                 <a href="https://monica.andreas-wiedel.de" class="btn btn-primary">Visit site</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-deck p-t-25">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">
+                    @include('shared.server_status', ['isRunning' => $isSeafileRunning])
+
+                    Seafile
+                </h4>
+                <p>Private cloud.</p>
+                <a href="https://seafile.andreas-wiedel.de" class="btn btn-primary">Visit site</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">
+                    @include('shared.server_status', ['isRunning' => $isTeamspeak3Running])
+
+                    Teamspeak 3
+                </h4>
+                <a href="ts3server://network-gaming-clan.de:9987" class="btn btn-primary">Connect</a>
             </div>
         </div>
     </div>
