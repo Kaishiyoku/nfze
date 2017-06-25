@@ -25,3 +25,18 @@
 .p-b-50 {
     padding-bottom: 50px;
 }
+
+.status {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.status.status-online {
+    background-color: #b5de5d;
+}
+
+.status.status-offline {
+    background-color: #c42626;
+}
