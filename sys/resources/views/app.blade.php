@@ -41,6 +41,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="https://www.andreas-wiedel.de"><i class="fa fa-home" aria-hidden="true"></i> Website</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="mailto:dmp@nfze.de"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a>
+                </li>
             </ul>
         </div>
     </div>
