@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    @include('shared.server_status', ['isRunning' => $carbonNotesIsRunning])
+                    @include('shared.server_status', ['isRunning' => $carbonNotes['isRunning']])
 
                     Carbon Notes
                 </h4>
@@ -19,7 +19,7 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    @include('shared.server_status', ['isRunning' => $sternenflottenDivisionIsRunning])
+                    @include('shared.server_status', ['isRunning' => $sternenflottenDivision['isRunning']])
 
                     1. Sternenflotten Division
                 </h4>
@@ -33,7 +33,7 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    @include('shared.server_status', ['isRunning' => $networkGamingClanIsRunning])
+                    @include('shared.server_status', ['isRunning' => $networkGamingClan['isRunning']])
 
                     Network Gaming Clan
                 </h4>
@@ -45,7 +45,7 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    @include('shared.server_status', ['isRunning' => $asphyxiatedDreamsIsRunning])
+                    @include('shared.server_status', ['isRunning' => $asphyxiatedDreams['isRunning']])
 
                     Asphyxiated Dreams
                 </h4>
@@ -57,7 +57,7 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    @include('shared.server_status', ['isRunning' => $lastEscapeIsRunning])
+                    @include('shared.server_status', ['isRunning' => $lastEscape['isRunning']])
 
                     Last Escape
                 </h4>
@@ -74,7 +74,7 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    @include('shared.server_status', ['isRunning' => $wallabagIsRunning])
+                    @include('shared.server_status', ['isRunning' => $wallabag['isRunning']])
 
                     Wallabag
                 </h4>
@@ -86,7 +86,7 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    @include('shared.server_status', ['isRunning' => $rssIsRunning])
+                    @include('shared.server_status', ['isRunning' => $rss['isRunning']])
 
                     Fresh RSS
                 </h4>
@@ -98,7 +98,7 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    @include('shared.server_status', ['isRunning' => $monicaIsRunning])
+                    @include('shared.server_status', ['isRunning' => $monica['isRunning']])
 
                     Monica
                 </h4>
@@ -112,7 +112,7 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    @include('shared.server_status', ['isRunning' => $isSeafileRunning])
+                    @include('shared.server_status', ['isRunning' => $seafile['isRunning']])
 
                     Seafile
                 </h4>
@@ -124,7 +124,7 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    @include('shared.server_status', ['isRunning' => $isTeamspeak3Running])
+                    @include('shared.server_status', ['isRunning' => $teamspeak3['isRunning']])
 
                     Teamspeak 3
                 </h4>

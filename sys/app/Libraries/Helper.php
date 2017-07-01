@@ -2,9 +2,16 @@
 
 namespace App\Libraries;
 
+use App\Models\Enums\Application;
+
 class Helper
 {
-    public static function ping($url)
+    /**
+     * @param string $application
+     * @param string $url
+     * @return array
+     */
+    public static function ping($application, $url)
     {
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_NOBODY, true);
@@ -16,10 +23,18 @@ class Helper
 
         curl_close($ch);
 
-        return $statusCode == 200;
+        return [
+            'application' => $application,
+            'isRunning' => $statusCode == 200
+        ];
     }
 
-    public static function teamspeakPing($url)
+    /**
+     * @param string $application
+     * @param string $url
+     * @return array
+     */
+    public static function teamspeakPing($application, $url)
     {
         $isRunning = false;
 
@@ -35,6 +50,25 @@ class Helper
             fclose($socket);
         }
 
-        return $isRunning;
+        return [
+            'application' => $application,
+            'isRunning' => $isRunning
+        ];
+    }
+
+    public static function getInformationForApplications()
+    {
+        return [
+            'carbonNotes' => self::ping(Application::CARBON_NOTES, 'https://carbon-notes.de'),
+            'sternenflottenDivision' => self::ping(Application::SFD, 'https://sternenflotten-division.net'),
+            'networkGamingClan' => self::ping(Application::NETWORK_GAMING_CLAN, 'https://network-gaming-clan.de'),
+            'asphyxiatedDreams' => self::ping(Application::ASPHYXIATED_DREAMS, 'https://asphyxiated-dreams.de'),
+            'lastEscape' => self::ping(Application::LAST_ESCAPE, 'https://last-escape.net'),
+            'wallabag' => self::ping(Application::WALLABAG, 'https://wallabag.andreas-wiedel.de'),
+            'rss' => self::ping(Application::RSS, 'https://rss.andreas-wiedel.de'),
+            'monica' => self::ping(Application::MONICA, 'https://monica.andreas-wiedel.de'),
+            'seafile' => self::ping(Application::SEAFILE, 'https://seafile.andreas-wiedel.de'),
+            'teamspeak3' => self::teamspeakPing(Application::TEAMSPEAK_3, 'network-gaming-clan.de')
+        ];
     }
 }
