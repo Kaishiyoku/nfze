@@ -1,0 +1,18 @@
+.bg-custom {
+  background-color: #19929d;
+}
+
+.status {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+  &.status-online {
+    background-color: #b5de5d;
+  }
+
+  &.status-offline {
+    background-color: #c42626;
+  }
+}
