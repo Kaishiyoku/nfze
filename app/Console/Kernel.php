@@ -29,8 +29,8 @@ class Kernel extends ConsoleKernel
         $schedule->call(function () {
            $applicationPings = Helper::getInformationForApplications();
 
-           foreach ($applicationPings as $ping) {
-               PingLog::saveNew($ping['application'], $ping['isRunning']);
+           foreach ($applicationPings as $applicationPing) {
+               PingLog::saveNew($applicationPing['application'], $applicationPing['ping'], $applicationPing['isRunning']);
            }
         })->everyMinute();
     }

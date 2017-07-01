@@ -9,10 +9,13 @@
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $carbonNotes['isRunning']])
 
-                    Carbon Notes
+                    <a href="https://www.carbon-notes.de">Carbon Notes</a>
                 </h4>
                 <p>Simple note taking with many features.</p>
-                <a href="https://www.carbon-notes.de" class="btn btn-primary">Visit site</a>
+
+                <div id="carbon-notes-chart">
+                    @include('shared._sparkline_chart', ['selector' => '#carbon-notes-chart', 'data' => $carbonNotes['chart_data']])
+                </div>
             </div>
         </div>
 
@@ -21,10 +24,13 @@
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $sternenflottenDivision['isRunning']])
 
-                    1. Sternenflotten Division
+                    <a href="https://www.sternenflotten-division.net">1. Sternenflotten Division</a>
                 </h4>
                 <p>Online Star Trek roleplay community.</p>
-                <a href="https://www.sternenflotten-division.net" class="btn btn-primary">Visit site</a>
+
+                <div id="sfd-chart">
+                    @include('shared._sparkline_chart', ['selector' => '#sfd-chart', 'data' => $sternenflottenDivision['chart_data']])
+                </div>
             </div>
         </div>
     </div>
@@ -35,10 +41,13 @@
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $networkGamingClan['isRunning']])
 
-                    Network Gaming Clan
+                    <a href="https://www.network-gaming-clan.de">Network Gaming Clan</a>
                 </h4>
                 <p>Clansite.</p>
-                <a href="https://www.network-gaming-clan.de" class="btn btn-primary">Visit site</a>
+
+                <div id="network-gaming-clan-chart">
+                    @include('shared._sparkline_chart', ['selector' => '#network-gaming-clan-chart', 'data' => $networkGamingClan['chart_data']])
+                </div>
             </div>
         </div>
 
@@ -47,10 +56,13 @@
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $asphyxiatedDreams['isRunning']])
 
-                    Asphyxiated Dreams
+                    <a href="https://www.asphyxiated-dreams.de">Asphyxiated Dreams</a>
                 </h4>
                 <p>Page of my former band.</p>
-                <a href="https://www.asphyxiated-dreams.de" class="btn btn-primary">Visit site</a>
+
+                <div id="asphyxiated-dreams-chart">
+                    @include('shared._sparkline_chart', ['selector' => '#asphyxiated-dreams-chart', 'data' => $asphyxiatedDreams['chart_data']])
+                </div>
             </div>
         </div>
 
@@ -59,10 +71,13 @@
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $lastEscape['isRunning']])
 
-                    Last Escape
+                    <a href="https://www.last-escape.net">Last Escape</a>
                 </h4>
                 <p>Former browsergame project.</p>
-                <a href="https://www.last-escape.net" class="btn btn-primary">Visit site</a>
+
+                <div id="last-escape-chart">
+                    @include('shared._sparkline_chart', ['selector' => '#last-escape-chart', 'data' => $lastEscape['chart_data']])
+                </div>
             </div>
         </div>
     </div>
@@ -76,10 +91,13 @@
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $wallabag['isRunning']])
 
-                    Wallabag
+                    <a href="https://wallabag.andreas-wiedel.de">Wallabag</a>
                 </h4>
                 <p>Read it later app.</p>
-                <a href="https://wallabag.andreas-wiedel.de" class="btn btn-primary">Visit site</a>
+
+                <div id="wallabag-chart">
+                    @include('shared._sparkline_chart', ['selector' => '#wallabag-chart', 'data' => $wallabag['chart_data']])
+                </div>
             </div>
         </div>
 
@@ -88,10 +106,13 @@
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $rss['isRunning']])
 
-                    Fresh RSS
+                    <a href="https://rss.andreas-wiedel.de">Fresh RSS</a>
                 </h4>
                 <p>RSS aggregator.</p>
-                <a href="https://rss.andreas-wiedel.de" class="btn btn-primary">Visit site</a>
+
+                <div id="rss-chart">
+                    @include('shared._sparkline_chart', ['selector' => '#rss-chart', 'data' => $rss['chart_data']])
+                </div>
             </div>
         </div>
 
@@ -100,10 +121,13 @@
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $monica['isRunning']])
 
-                    Monica
+                    <a href="https://monica.andreas-wiedel.de">Monica</a>
                 </h4>
                 <p>Personal CRM app.</p>
-                <a href="https://monica.andreas-wiedel.de" class="btn btn-primary">Visit site</a>
+
+                <div id="monica-chart">
+                    @include('shared._sparkline_chart', ['selector' => '#monica-chart', 'data' => $monica['chart_data']])
+                </div>
             </div>
         </div>
     </div>
@@ -114,10 +138,13 @@
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $seafile['isRunning']])
 
-                    Seafile
+                    <a href="https://seafile.andreas-wiedel.de">Seafile</a>
                 </h4>
                 <p>Private cloud.</p>
-                <a href="https://seafile.andreas-wiedel.de" class="btn btn-primary">Visit site</a>
+
+                <div id="seafile-chart">
+                    @include('shared._sparkline_chart', ['selector' => '#seafile-chart', 'data' => $seafile['chart_data']])
+                </div>
             </div>
         </div>
 
@@ -126,9 +153,14 @@
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $teamspeak3['isRunning']])
 
-                    Teamspeak 3
+                    <a href="ts3server://network-gaming-clan.de:9987">Teamspeak 3</a>
                 </h4>
-                <a href="ts3server://network-gaming-clan.de:9987" class="btn btn-primary">Connect</a>
+
+                <p>&nbsp;</p>
+
+                <div id="teamspeak-3-chart">
+                    @include('shared._sparkline_chart', ['selector' => '#teamspeak-3-chart', 'data' => $teamspeak3['chart_data']])
+                </div>
             </div>
         </div>
     </div>

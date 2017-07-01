@@ -3,6 +3,8 @@
 namespace App\Libraries;
 
 use App\Models\Enums\Application;
+use App\Models\PingLog;
+use ConsoleTVs\Charts\Facades\Charts;
 
 class Helper
 {
@@ -19,13 +21,15 @@ class Helper
         curl_setopt($ch, CURLOPT_TIMEOUT, 5);
         curl_exec($ch);
 
-        $statusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $ping = curl_getinfo($ch, CURLINFO_TOTAL_TIME) * 1000;
 
         curl_close($ch);
 
         return [
             'application' => $application,
-            'isRunning' => $statusCode == 200
+            'isRunning' => $status == 200,
+            'ping' => $ping,
         ];
     }
 
@@ -52,8 +56,28 @@ class Helper
 
         return [
             'application' => $application,
-            'isRunning' => $isRunning
+            'isRunning' => $isRunning,
+            'ping' => $isRunning
         ];
+    }
+
+    /**
+     * @param $application
+     * @return array
+     */
+    public static function getChartDataFor($application)
+    {
+        $data = [];
+        $pingLogs = PingLog::whereApplication($application)->orderBy('created_at', 'desc')->take(15);
+
+        foreach ($pingLogs->get()->reverse() as $pingLog) {
+            $data[] = [
+                $pingLog->created_at->format('H:i'),
+                $pingLog->is_running ? $pingLog->ping : -1
+            ];
+        }
+
+        return $data;
     }
 
     public static function getInformationForApplications()
@@ -70,5 +94,16 @@ class Helper
             'seafile' => self::ping(Application::SEAFILE, 'https://seafile.andreas-wiedel.de'),
             'teamspeak3' => self::teamspeakPing(Application::TEAMSPEAK_3, 'network-gaming-clan.de')
         ];
+    }
+
+    public static function getInformationForApplicationsWithCharts()
+    {
+        $applicationPings = self::getInformationForApplications();
+
+        foreach ($applicationPings as $key => $applicationPing) {
+            $applicationPings[$key]['chart_data'] = self::getChartDataFor($applicationPing['application']);
+        }
+
+        return $applicationPings;
     }
 }

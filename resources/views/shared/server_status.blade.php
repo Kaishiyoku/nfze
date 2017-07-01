@@ -1,9 +1,9 @@
 @if ($isRunning)
-    <span class="status status-online" data-toggle="tooltip" data-placement="right" title="online">
+    <span class="status status-online">
 
     </span>
 @else
-    <span class="status status-offline" data-toggle="tooltip" data-placement="right" title="offline">
+    <span class="status status-offline">
 
     </span>
 @endif

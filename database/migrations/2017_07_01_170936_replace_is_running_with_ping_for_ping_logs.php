@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePasswordResetsTable extends Migration
+class ReplaceIsRunningWithPingForPingLogs extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreatePasswordResetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('password_resets', function (Blueprint $table) {
-            $table->string('email')->index();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
+        Schema::table('ping_logs', function (Blueprint $table) {
+            $table->dropColumn('is_running');
+
+            $table->double('ping');
         });
     }
 
@@ -27,6 +27,10 @@ class CreatePasswordResetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('password_resets');
+        Schema::table('ping_logs', function (Blueprint $table) {
+            $table->dropColumn('ping');
+
+            $table->boolean('is_running');
+        });
     }
 }
