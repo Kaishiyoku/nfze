@@ -168,6 +168,7 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Kaishiyoku\Menu\MenuServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -230,9 +231,9 @@ return [
         /*
          * Package class aliases...
          */
-        'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Menu' => Kaishiyoku\Menu\Facades\Menu::class,
 
     ],
 

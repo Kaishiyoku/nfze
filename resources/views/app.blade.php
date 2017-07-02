@@ -24,11 +24,7 @@
         <a class="navbar-brand" href="{{ url('/') }}">NFZE</a>
 
         <div class="collapse navbar-collapse" id="navbarsExampleContainer">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('/') }}">Home</a>
-                </li>
-            </ul>
+            {!! Menu::render() !!}
 
             <ul class="navbar-nav">
                 <li class="nav-item">

@@ -10,7 +10,8 @@
         "laravel/tinker": "~1.0",
         "commerceguys/enum": "1.0",
         "laravelcollective/html": "5.4.8",
-        "austinb/gameq": "3.0.11"
+        "austinb/gameq": "3.0.11",
+        "kaishiyoku/laravel-menu": "1.3.6"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
