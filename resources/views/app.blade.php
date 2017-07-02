@@ -8,7 +8,7 @@
     <meta name="author" content="Andreas Wiedel">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Narrow Jumbotron Template for Bootstrap</title>
+    <title>{{ env('APP_NAME') }}</title>
 
     {{ Html::style('css/app.css') }}
     {{ Html::script('js/app.js') }}
