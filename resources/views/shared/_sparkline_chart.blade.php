@@ -58,7 +58,7 @@
                     padding: 5,
                     formatter: function () {
                         if (this.y === -1) {
-                            return '<span class="text-danger">offline</span>';
+                            return this.points[0].key + '<br/><span class="text-danger">offline</span>';
                         }
 
                         return this.points[0].key + '<br/>' + this.y + 'ms';
