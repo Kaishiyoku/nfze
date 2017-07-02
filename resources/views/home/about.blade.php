@@ -11,7 +11,11 @@
                 </h4>
 
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
+                        <img src="{{ asset('img/ns2_logo.png') }}" style="height: 200px;" class="img-thumbnail m-b-20"/>
+                    </div>
+
+                    <div class="col-sm-4">
                         <h5>General</h5>
 
                         <table class="table table-sm">
@@ -40,7 +44,7 @@
                         </table>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-4 offset-sm-1">
                         <h5>Time played</h5>
 
                         <table class="table table-sm">
