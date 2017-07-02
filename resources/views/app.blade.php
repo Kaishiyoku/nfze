@@ -55,15 +55,21 @@
     @yield('content')
 
     <footer class="footer p-t-50">
-        <p>
-            @if (date('Y') == 2017)
-                {{ date('Y') }},
-            @else
-                2017 - {{ date('Y') }},
-            @endif
+        <div class="row p-b-20 text-muted">
+            <div class="col-sm-6">
+                @if (date('Y') == 2017)
+                    {{ date('Y') }},
+                @else
+                    2017 - {{ date('Y') }},
+                @endif
 
-            Andreas Wiedel
-        </p>
+                Andreas Wiedel
+            </div>
+
+            <div class="col-sm-6 text-right">
+                Timezone: {{ config('app.timezone') }}
+            </div>
+        </div>
     </footer>
 </div>
 </body>
