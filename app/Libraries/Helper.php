@@ -30,7 +30,7 @@ class Helper
         return [
             'application' => $application,
             'isRunning' => $status == 200,
-            'ping' => $ping,
+            'ping' => round($ping),
         ];
     }
 
@@ -62,7 +62,7 @@ class Helper
         return [
             'application' => $application,
             'isRunning' => $results[$serverAddress]['gq_online'],
-            'ping' => $timeElapsed,
+            'ping' => round($timeElapsed),
             'serverInfo' => $results[$serverAddress]
         ];
     }
