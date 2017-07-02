@@ -14,6 +14,8 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('home.about');
+        $ns2PlayerData = json_decode(Helper::getContentFromUrl('http://hive2.ns2cdt.com/api/get/playerData/12888271'), true);
+
+        return view('home.about', compact('ns2PlayerData'));
     }
 }

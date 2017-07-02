@@ -10,6 +10,24 @@ use GameQ\GameQ;
 class Helper
 {
     /**
+     * @param string $url
+     * @return mixed
+     */
+    public static function getContentFromUrl($url)
+    {
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_HEADER, false);
+
+        $content = curl_exec($curl);
+
+        curl_close($curl);
+
+        return $content;
+    }
+
+    /**
      * @param string $application
      * @param string $url
      * @return array
