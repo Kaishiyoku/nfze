@@ -102,8 +102,6 @@ class Helper
 
     public static function getInformationForApplications()
     {
-        //dd(self::voiceServerPing(Application::TEAMSPEAK_3, 'teamspeak3', '37.221.193.27', 9987, 10011));
-
         return [
             'carbonNotes' => self::ping(Application::CARBON_NOTES, 'https://carbon-notes.de'),
             'sternenflottenDivision' => self::ping(Application::SFD, 'https://sternenflotten-division.net'),
