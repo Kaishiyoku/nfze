@@ -1,7 +1,19 @@
 @extends('app')
 
 @section('content')
-    <h1>Games</h1>
+    <h1>Favorite games</h1>
+
+    <ul>
+        @foreach (explode(';', env('FAVORITE_GAMES')) as $gameStr)
+            <?php
+                $game = explode(',', $gameStr);
+            ?>
+
+            <li>{{ Html::link($game[1], $game[0]) }}</li>
+        @endforeach
+    </ul>
+
+    <h1>Game stats</h1>
 
     <div class="card-deck p-t-25 p-b-30">
         <div class="card">
@@ -72,4 +84,8 @@
             </div>
         </div>
     </div>
+
+    <a href="http://steamcommunity.com/id/kaishiyoku/" target="_blank">
+        <img src="https://steam.mmosvc.com/76561197973153999/v1.png" alt="76561197973153999" class="img-thumbnail img-fluid" />
+    </a>
 @endsection
