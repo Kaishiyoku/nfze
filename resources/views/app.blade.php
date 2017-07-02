@@ -62,7 +62,11 @@
                 Andreas Wiedel
             </div>
 
-            <div class="col-sm-6 text-right">
+            <div class="col-sm-6 text-right hidden-sm-down">
+                Timezone: {{ config('app.timezone') }}
+            </div>
+
+            <div class="col-sm-6 hidden-sm-up">
                 Timezone: {{ config('app.timezone') }}
             </div>
         </div>
