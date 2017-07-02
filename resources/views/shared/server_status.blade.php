@@ -1,9 +1,5 @@
 @if ($isRunning)
-    <span class="status status-online">
-
-    </span>
+    <i class="fa fa-circle text-success" aria-hidden="true"></i>
 @else
-    <span class="status status-offline">
-
-    </span>
+    <i class="fa fa-circle text-danger" aria-hidden="true"></i>
 @endif

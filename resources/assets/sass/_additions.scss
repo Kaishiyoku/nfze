@@ -2,21 +2,6 @@
   background-color: #64a8eb;
 }
 
-.status {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-
-  &.status-online {
-    background-color: #b5de5d;
-  }
-
-  &.status-offline {
-    background-color: #c42626;
-  }
-}
-
 ul.teamspeak {
   margin: 0;
   padding: 0;
