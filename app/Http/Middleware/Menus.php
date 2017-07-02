@@ -37,7 +37,7 @@ class Menus
     {
         Menu::registerDefault([
             Menu::link('home.index', 'Home', [], ['class' => 'nav-link']),
-            Menu::link('home.about', 'About', [], ['class' => 'nav-link']),
+            Menu::link('home.about_me', 'About me', [], ['class' => 'nav-link']),
         ], ['class' => 'navbar-nav mr-auto'], ['nav-item']);
 
         return $next($request);
