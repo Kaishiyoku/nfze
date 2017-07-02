@@ -5,6 +5,7 @@ namespace App\Libraries;
 use App\Models\Enums\Application;
 use App\Models\PingLog;
 use ConsoleTVs\Charts\Facades\Charts;
+use GameQ\GameQ;
 
 class Helper
 {
@@ -34,32 +35,51 @@ class Helper
     }
 
     /**
-     * @param string $application
-     * @param string $url
+     * @param $application
+     * @param $gameType
+     * @param $ip
+     * @param $port
+     * @param array $options
      * @return array
      */
-    public static function teamspeakPing($application, $url)
+    public static function gameServerPing($application, $gameType, $ip, $port, $options = [])
     {
-        $isRunning = false;
+        $serverAddress = $ip . ':' . $port;
 
-        $socket = @fsockopen($url, 10011);
+        $startTime = microtime(true);
 
-        if (is_resource($socket)) {
-            socket_set_timeout($socket, 5);
+        $gameQ = new GameQ();
+        $gameQ->addServer([
+            'type' => $gameType,
+            'host' => $serverAddress,
+            'options' => $options
+        ]);
 
-            if ($socket and (rtrim(fgets($socket, 4096)) == "TS3")) {
-                $isRunning = true;
-            }
+        $results = $gameQ->process();
 
-            fclose($socket);
-        }
+        $timeElapsed = round((microtime(true) - $startTime) * 1000);
 
         return [
             'application' => $application,
-            'isRunning' => $isRunning,
-            'ping' => $isRunning
+            'isRunning' => $results[$serverAddress]['gq_online'],
+            'ping' => $timeElapsed,
+            'serverInfo' => $results[$serverAddress]
         ];
     }
+
+    /**
+     * @param $application
+     * @param $voiceType
+     * @param $ip
+     * @param $port
+     * @param $queryPort
+     * @return array
+     */
+    public static function voiceServerPing($application, $voiceType, $ip, $port, $queryPort)
+    {
+        return self::gameServerPing($application, $voiceType, $ip, $port, ['query_port' => $queryPort]);
+    }
+
 
     /**
      * @param $application
@@ -82,6 +102,8 @@ class Helper
 
     public static function getInformationForApplications()
     {
+        //dd(self::voiceServerPing(Application::TEAMSPEAK_3, 'teamspeak3', '37.221.193.27', 9987, 10011));
+
         return [
             'carbonNotes' => self::ping(Application::CARBON_NOTES, 'https://carbon-notes.de'),
             'sternenflottenDivision' => self::ping(Application::SFD, 'https://sternenflotten-division.net'),
@@ -92,7 +114,8 @@ class Helper
             'rss' => self::ping(Application::RSS, 'https://rss.andreas-wiedel.de'),
             'monica' => self::ping(Application::MONICA, 'https://monica.andreas-wiedel.de'),
             'seafile' => self::ping(Application::SEAFILE, 'https://seafile.andreas-wiedel.de'),
-            'teamspeak3' => self::teamspeakPing(Application::TEAMSPEAK_3, 'network-gaming-clan.de')
+            'teamspeak3' => self::voiceServerPing(Application::TEAMSPEAK_3, 'teamspeak3', '37.221.193.27', 9987, 10011),
+            'naturalSelection2' => self::gameServerPing(Application::NATURAL_SELECTION_2, 'ns2', '37.221.193.27', 27015)
         ];
     }
 

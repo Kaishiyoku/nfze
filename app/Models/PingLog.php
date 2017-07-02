@@ -17,6 +17,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PingLog whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PingLog whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PingLog whereIsRunning($value)
+ * @property float $ping
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\PingLog wherePing($value)
  */
 class PingLog extends Model
 {

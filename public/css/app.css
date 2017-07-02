@@ -909,6 +909,34 @@
   background-color: #c42626;
 }
 
+ul.teamspeak {
+  margin: 0;
+  padding: 0;
+}
+
+ul.teamspeak ul {
+  margin-left: 0;
+  padding-left: 20px;
+}
+
+ul.teamspeak ul.players > li:before {
+  float: left;
+  font-family: 'FontAwesome';
+  content: '\F2C0';
+  margin-right: 5px;
+}
+
+ul.teamspeak li {
+  list-style-type: none;
+}
+
+ul.teamspeak li:before {
+  float: left;
+  font-family: 'FontAwesome';
+  content: '\F114';
+  margin-right: 5px;
+}
+
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors

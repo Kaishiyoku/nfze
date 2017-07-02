@@ -130,9 +130,7 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="card-deck p-t-25">
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
@@ -147,20 +145,91 @@
                 </div>
             </div>
         </div>
+    </div>
 
+    <div class="card-deck p-t-25">
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $teamspeak3['isRunning']])
 
-                    <a href="ts3server://network-gaming-clan.de:9987">Teamspeak 3</a>
+                    <a href="{{ $teamspeak3['serverInfo']['gq_joinlink'] }}">Teamspeak 3</a>
                 </h4>
 
-                <p>&nbsp;</p>
+                <p>{{ $teamspeak3['serverInfo']['gq_hostname'] }}</p>
 
                 <div id="teamspeak-3-chart">
                     @include('shared._sparkline_chart', ['selector' => '#teamspeak-3-chart', 'data' => $teamspeak3['chart_data']])
                 </div>
+
+                @if ($teamspeak3['isRunning'])
+                    <br/>
+
+                    <ul class="teamspeak">
+                        @foreach ($teamspeak3['serverInfo']['teams'] as $team)
+                            <li>
+                                {{ $team['gq_name'] }}
+
+                                <ul class="players">
+                                    @foreach ($teamspeak3['serverInfo']['players'] as $player)
+                                        @if ($player['gq_team'] == $team['gq_id'] && strpos($player['gq_name'], 'Unknown from') !== 0)
+                                            <li>{{ $player['gq_name'] }}</li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">
+                    @include('shared.server_status', ['isRunning' => $naturalSelection2['isRunning']])
+
+                    <a href="{{ $naturalSelection2['serverInfo']['gq_joinlink'] }}">Natural Selection 2</a>
+                </h4>
+
+                <p>{{ $naturalSelection2['serverInfo']['gq_hostname'] }}</p>
+
+                <div id="natural-selection-2-chart">
+                    @include('shared._sparkline_chart', ['selector' => '#natural-selection-2-chart', 'data' => $naturalSelection2['chart_data']])
+                </div>
+
+                @if ($naturalSelection2['isRunning'])
+                    <br/>
+
+                    <p>
+                        Map: {{ $naturalSelection2['serverInfo']['gq_mapname'] }}
+                    </p>
+
+                    <table class="table table-sm">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Score</th>
+                            <th>Time</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @if (empty($naturalSelection2['serverInfo']['players']))
+                            <tr>
+                                <td colspan="3" class="text-center"><i>No players online.</i></td>
+                            </tr>
+                        @else
+                            @foreach ($naturalSelection2['serverInfo']['players'] as $player)
+                                <tr>
+                                    <td>{{ $player['gq_name'] }}</td>
+                                    <td>{{ $player['gq_score'] }}</td>
+                                    <td>{{ format_seconds($player['gq_time']) }}</td>
+                                </tr>
+                            @endforeach
+                        @endif
+                        </tbody>
+                    </table>
+                @endif
             </div>
         </div>
     </div>
