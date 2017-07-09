@@ -17,4 +17,5 @@ abstract class Application extends AbstractEnum
     const SEAFILE             = 'seafile';
     const TEAMSPEAK_3         = 'teamspeak_3';
     const NATURAL_SELECTION_2 = 'natural_selection_2';
+    const STRAHLUNGSWERTE     = 'strahlungswerte';
 }

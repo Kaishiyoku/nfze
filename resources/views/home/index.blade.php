@@ -11,10 +11,25 @@
 
                     <a href="https://www.carbon-notes.de">Carbon Notes</a>
                 </h4>
-                <p>Simple note taking with many features.</p>
+                <p>Simple note taking with many features for free.</p>
 
                 <div id="carbon-notes-chart">
                     @include('shared._sparkline_chart', ['selector' => '#carbon-notes-chart', 'data' => $carbonNotes['chart_data']])
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">
+                    @include('shared.server_status', ['isRunning' => $strahlungswerte['isRunning']])
+
+                    <a href="https://www.strahlungswerte.de">Strahlungswerte.de</a>
+                </h4>
+                <p>Local radiation dosage rate visualizer for Germany.</p>
+
+                <div id="strahlungswerte-chart">
+                    @include('shared._sparkline_chart', ['selector' => '#strahlungswerte-chart', 'data' => $strahlungswerte['chart_data']])
                 </div>
             </div>
         </div>
@@ -26,7 +41,7 @@
 
                     <a href="https://www.sternenflotten-division.net">1. Sternenflotten Division</a>
                 </h4>
-                <p>Online Star Trek roleplay community.</p>
+                <p>German online Star Trek roleplay community.</p>
 
                 <div id="sfd-chart">
                     @include('shared._sparkline_chart', ['selector' => '#sfd-chart', 'data' => $sternenflottenDivision['chart_data']])

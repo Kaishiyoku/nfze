@@ -122,6 +122,7 @@ class Helper
     {
         return [
             'carbonNotes' => self::ping(Application::CARBON_NOTES, 'https://carbon-notes.de'),
+            'strahlungswerte' => self::ping(Application::STRAHLUNGSWERTE, 'https://strahlungswerte.de'),
             'sternenflottenDivision' => self::ping(Application::SFD, 'https://sternenflotten-division.net'),
             'networkGamingClan' => self::ping(Application::NETWORK_GAMING_CLAN, 'https://network-gaming-clan.de'),
             'asphyxiatedDreams' => self::ping(Application::ASPHYXIATED_DREAMS, 'https://asphyxiated-dreams.de'),
