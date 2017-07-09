@@ -32,7 +32,7 @@ class Kernel extends ConsoleKernel
            foreach ($applicationPings as $applicationPing) {
                PingLog::saveNew($applicationPing['application'], $applicationPing['ping'], $applicationPing['isRunning']);
            }
-        })->everyMinute();
+        })->everyFiveMinutes();
     }
 
     /**
