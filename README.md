@@ -7,7 +7,7 @@ Table of contents
 
 License
 =======
-MIT (https://github.com/Kaishiyoku/rawwr/blob/master/LICENSE)
+MIT (https://github.com/Kaishiyoku/nfze/blob/master/LICENSE)
 
 
 Author
