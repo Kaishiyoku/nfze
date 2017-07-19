@@ -22,21 +22,6 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    @include('shared.server_status', ['isRunning' => $strahlungswerte['isRunning']])
-
-                    <a href="https://www.strahlungswerte.de">Strahlungswerte.de</a>
-                </h4>
-                <p>Local radiation dosage rate visualizer for Germany.</p>
-
-                <div id="strahlungswerte-chart">
-                    @include('shared._sparkline_chart', ['selector' => '#strahlungswerte-chart', 'data' => $strahlungswerte['chart_data']])
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-block">
-                <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $sternenflottenDivision['isRunning']])
 
                     <a href="https://www.sternenflotten-division.net">1. Sternenflotten Division</a>
@@ -45,6 +30,38 @@
 
                 <div id="sfd-chart">
                     @include('shared._sparkline_chart', ['selector' => '#sfd-chart', 'data' => $sternenflottenDivision['chart_data']])
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-deck p-b-50">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">
+                    @include('shared.server_status', ['isRunning' => $rawwr['isRunning']])
+
+                    <a href="https://www.rawwr.co">Rawwr.co</a>
+                </h4>
+                <p>A simple, Laravel-powered gallery manager.</p>
+
+                <div id="rawwr-chart">
+                    @include('shared._sparkline_chart', ['selector' => '#rawwr-chart', 'data' => $rawwr['chart_data']])
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">
+                    @include('shared.server_status', ['isRunning' => $strahlungswerte['isRunning']])
+
+                    <a href="https://www.strahlungswerte.de">Strahlungswerte.de</a>
+                </h4>
+                <p>Local radiation dosage rate visualizer for Germany.</p>
+
+                <div id="strahlungswerte-chart">
+                    @include('shared._sparkline_chart', ['selector' => '#strahlungswerte-chart', 'data' => $strahlungswerte['chart_data']])
                 </div>
             </div>
         </div>
