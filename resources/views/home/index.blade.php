@@ -138,7 +138,7 @@
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $rss['isRunning']])
 
-                    <a href="https://rss.andreas-wiedel.de">Fresh RSS</a>
+                    <a href="https://crystal-rss.rocks">Crystal RSS</a>
                 </h4>
                 <p>RSS aggregator.</p>
 

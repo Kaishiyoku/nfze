@@ -128,7 +128,7 @@ class Helper
             'asphyxiatedDreams' => self::ping(Application::ASPHYXIATED_DREAMS, 'https://asphyxiated-dreams.de'),
             'lastEscape' => self::ping(Application::LAST_ESCAPE, 'https://last-escape.net'),
             'wallabag' => self::ping(Application::WALLABAG, 'https://wallabag.andreas-wiedel.de'),
-            'rss' => self::ping(Application::RSS, 'https://rss.andreas-wiedel.de'),
+            'rss' => self::ping(Application::RSS, 'https://crystal-rss.rocks'),
             'monica' => self::ping(Application::MONICA, 'https://monica.andreas-wiedel.de'),
             'seafile' => self::ping(Application::SEAFILE, 'https://seafile.andreas-wiedel.de'),
             'teamspeak3' => self::voiceServerPing(Application::TEAMSPEAK_3, 'teamspeak3', '37.221.193.27', 9987, 10011),
