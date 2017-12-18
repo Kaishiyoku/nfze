@@ -1,12 +1,8 @@
-// Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
-@import "helpers";
+@import "_helpers";
 
-// Font Awesome
-@import "node_modules/font-awesome/scss/font-awesome";
+@import "~font-awesome/scss/font-awesome";
+@import "bootstrap/_bootstrap";
 
-// Bootstrap
-@import "node_modules/bootstrap/scss/bootstrap";
-
-@import "additions";
+@import "_additions";
