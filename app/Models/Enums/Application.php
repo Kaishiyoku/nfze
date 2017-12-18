@@ -13,10 +13,7 @@ abstract class Application extends AbstractEnum
     const LAST_ESCAPE         = 'last_escape';
     const WALLABAG            = 'wallabag';
     const RSS                 = 'rss';
-    const MONICA              = 'monica';
     const SEAFILE             = 'seafile';
     const TEAMSPEAK_3         = 'teamspeak_3';
-    const NATURAL_SELECTION_2 = 'natural_selection_2';
     const STRAHLUNGSWERTE     = 'strahlungswerte';
-    const RAWWR               = 'rawwr';
 }

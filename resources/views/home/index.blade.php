@@ -22,14 +22,14 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    @include('shared.server_status', ['isRunning' => $sternenflottenDivision['isRunning']])
+                    @include('shared.server_status', ['isRunning' => $rss['isRunning']])
 
-                    <a href="https://www.sternenflotten-division.net">1. Sternenflotten Division</a>
+                    <a href="https://crystal-rss.rocks">Crystal RSS</a>
                 </h4>
-                <p>German online Star Trek roleplay community.</p>
+                <p>RSS aggregator.</p>
 
-                <div id="sfd-chart">
-                    @include('shared._sparkline_chart', ['selector' => '#sfd-chart', 'data' => $sternenflottenDivision['chart_data']])
+                <div id="rss-chart">
+                    @include('shared._sparkline_chart', ['selector' => '#rss-chart', 'data' => $rss['chart_data']])
                 </div>
             </div>
         </div>
@@ -39,14 +39,14 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    @include('shared.server_status', ['isRunning' => $rawwr['isRunning']])
+                    @include('shared.server_status', ['isRunning' => $sternenflottenDivision['isRunning']])
 
-                    <a href="https://www.rawwr.co">Rawwr.co</a>
+                    <a href="https://www.sternenflotten-division.net">1. Sternenflotten Division</a>
                 </h4>
-                <p>A simple, Laravel-powered gallery manager.</p>
+                <p>German online Star Trek roleplay community.</p>
 
-                <div id="rawwr-chart">
-                    @include('shared._sparkline_chart', ['selector' => '#rawwr-chart', 'data' => $rawwr['chart_data']])
+                <div id="sfd-chart">
+                    @include('shared._sparkline_chart', ['selector' => '#sfd-chart', 'data' => $sternenflottenDivision['chart_data']])
                 </div>
             </div>
         </div>
@@ -136,36 +136,6 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                    @include('shared.server_status', ['isRunning' => $rss['isRunning']])
-
-                    <a href="https://crystal-rss.rocks">Crystal RSS</a>
-                </h4>
-                <p>RSS aggregator.</p>
-
-                <div id="rss-chart">
-                    @include('shared._sparkline_chart', ['selector' => '#rss-chart', 'data' => $rss['chart_data']])
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-block">
-                <h4 class="card-title">
-                    @include('shared.server_status', ['isRunning' => $monica['isRunning']])
-
-                    <a href="https://monica.andreas-wiedel.de">Monica</a>
-                </h4>
-                <p>Personal CRM app.</p>
-
-                <div id="monica-chart">
-                    @include('shared._sparkline_chart', ['selector' => '#monica-chart', 'data' => $monica['chart_data']])
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-block">
-                <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $seafile['isRunning']])
 
                     <a href="https://seafile.andreas-wiedel.de">Seafile</a>
@@ -177,9 +147,7 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="card-deck p-t-25">
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
@@ -212,55 +180,6 @@
                             </li>
                         @endforeach
                     </ul>
-                @endif
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-block">
-                <h4 class="card-title">
-                    @include('shared.server_status', ['isRunning' => $naturalSelection2['isRunning']])
-
-                    <a href="{{ $naturalSelection2['serverInfo']['gq_joinlink'] }}">Natural Selection 2</a>
-                </h4>
-
-                <p>{{ $naturalSelection2['serverInfo']['gq_hostname'] }}</p>
-
-                <div id="natural-selection-2-chart">
-                    @include('shared._sparkline_chart', ['selector' => '#natural-selection-2-chart', 'data' => $naturalSelection2['chart_data']])
-                </div>
-
-                @if ($naturalSelection2['isRunning'])
-                    <br/>
-
-                    <p>
-                        Map: {{ $naturalSelection2['serverInfo']['gq_mapname'] }}
-                    </p>
-
-                    <table class="table table-sm">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Score</th>
-                            <th>Time</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @if (empty($naturalSelection2['serverInfo']['players']))
-                            <tr>
-                                <td colspan="3" class="text-center"><i>No players online.</i></td>
-                            </tr>
-                        @else
-                            @foreach ($naturalSelection2['serverInfo']['players'] as $player)
-                                <tr>
-                                    <td>{{ $player['gq_name'] }}</td>
-                                    <td>{{ $player['gq_score'] }}</td>
-                                    <td>{{ format_seconds($player['gq_time']) }}</td>
-                                </tr>
-                            @endforeach
-                        @endif
-                        </tbody>
-                    </table>
                 @endif
             </div>
         </div>
