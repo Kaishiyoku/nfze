@@ -16,4 +16,5 @@ abstract class Application extends AbstractEnum
     const SEAFILE             = 'seafile';
     const TEAMSPEAK_3         = 'teamspeak_3';
     const STRAHLUNGSWERTE     = 'strahlungswerte';
+    const MINECRAFT           = 'minecraft';
 }

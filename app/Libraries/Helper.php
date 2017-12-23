@@ -98,6 +98,11 @@ class Helper
         return self::gameServerPing($application, $voiceType, $ip, $port, ['query_port' => $queryPort]);
     }
 
+    public static function minecraftServerPing($application, $ip, $port)
+    {
+        return self::gameServerPing($application, 'minecraft', $ip, $port);
+    }
+
 
     /**
      * @param $application
@@ -131,6 +136,7 @@ class Helper
             'rss' => self::ping(Application::RSS, 'https://crystal-rss.rocks'),
             'seafile' => self::ping(Application::SEAFILE, 'https://seafile.andreas-wiedel.de'),
             'teamspeak3' => self::voiceServerPing(Application::TEAMSPEAK_3, 'teamspeak3', env('SERVER_IP'), 9987, 10011),
+            'minecraft' => self::minecraftServerPing(Application::MINECRAFT, env('SERVER_IP'), 25565),
         ];
     }
 

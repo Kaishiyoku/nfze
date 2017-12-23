@@ -34,3 +34,20 @@ ul.teamspeak {
     }
   }
 }
+
+ul.players {
+  margin: 0;
+  padding: 0;
+  font-size: $font-size-sm;
+
+  li {
+    list-style-type: none;
+
+    &:before {
+      float: left;
+      font-family: 'FontAwesome';
+      content: '\f2c0';
+      margin-right: 5px;
+    }
+  }
+}

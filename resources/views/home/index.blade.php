@@ -183,5 +183,31 @@
                 @endif
             </div>
         </div>
+
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">
+                    @include('shared.server_status', ['isRunning' => $minecraft['isRunning']])
+
+                    <a href="{{ $minecraft['serverInfo']['gq_joinlink'] }}">Minecraft</a>
+                </h4>
+
+                <div id="minecraft-chart">
+                    @include('shared._sparkline_chart', ['selector' => '#minecraft-chart', 'data' => $minecraft['chart_data']])
+                </div>
+
+                @if ($minecraft['isRunning'])
+                    <br/>
+
+                    <ul class="players">
+                        @foreach ($minecraft['serverInfo']['players'] as $player)
+                            <li>
+                                {{ $player['gq_name'] }}
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
+            </div>
+        </div>
     </div>
 @endsection
