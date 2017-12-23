@@ -147,7 +147,9 @@
                 </div>
             </div>
         </div>
+    </div>
 
+    <div class="card-deck p-t-25">
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
