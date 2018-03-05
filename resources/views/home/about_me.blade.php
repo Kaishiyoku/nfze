@@ -17,7 +17,7 @@
 
     <div class="card-deck p-t-25 p-b-30">
         <div class="card">
-            <div class="card-block">
+            <div class="card-body">
                 <h4 class="card-title">
                     Natural Selection 2
                 </h4>

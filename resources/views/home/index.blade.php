@@ -5,7 +5,7 @@
 
     <div class="card-deck p-t-25 p-b-30">
         <div class="card">
-            <div class="card-block">
+            <div class="card-body">
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $carbonNotes['isRunning']])
 
@@ -20,7 +20,7 @@
         </div>
 
         <div class="card">
-            <div class="card-block">
+            <div class="card-body">
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $rss['isRunning']])
 
@@ -37,7 +37,7 @@
 
     <div class="card-deck p-b-50">
         <div class="card">
-            <div class="card-block">
+            <div class="card-body">
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $sternenflottenDivision['isRunning']])
 
@@ -52,7 +52,7 @@
         </div>
 
         <div class="card">
-            <div class="card-block">
+            <div class="card-body">
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $strahlungswerte['isRunning']])
 
@@ -69,7 +69,7 @@
 
     <div class="card-deck p-b-50">
         <div class="card">
-            <div class="card-block">
+            <div class="card-body">
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $networkGamingClan['isRunning']])
 
@@ -84,7 +84,7 @@
         </div>
 
         <div class="card">
-            <div class="card-block">
+            <div class="card-body">
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $asphyxiatedDreams['isRunning']])
 
@@ -99,7 +99,7 @@
         </div>
 
         <div class="card">
-            <div class="card-block">
+            <div class="card-body">
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $lastEscape['isRunning']])
 
@@ -119,7 +119,7 @@
 
     <div class="card-deck p-t-25">
         <div class="card">
-            <div class="card-block">
+            <div class="card-body">
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $wallabag['isRunning']])
 
@@ -134,7 +134,7 @@
         </div>
 
         <div class="card">
-            <div class="card-block">
+            <div class="card-body">
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $seafile['isRunning']])
 
@@ -151,7 +151,7 @@
 
     <div class="card-deck p-t-25">
         <div class="card">
-            <div class="card-block">
+            <div class="card-body">
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $teamspeak3['isRunning']])
 
@@ -187,7 +187,7 @@
         </div>
 
         <div class="card">
-            <div class="card-block">
+            <div class="card-body">
                 <h4 class="card-title">
                     @include('shared.server_status', ['isRunning' => $minecraft['isRunning']])
 
