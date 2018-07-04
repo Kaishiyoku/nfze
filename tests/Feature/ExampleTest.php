@@ -18,8 +18,6 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/');
         
-        fwrite(STDERR, print_r($response, TRUE));
-
         $response->assertStatus(200);
     }
 }
