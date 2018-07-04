@@ -17,6 +17,8 @@ class ExampleTest extends TestCase
     public function testBasicTest()
     {
         $response = $this->get('/');
+        
+        fwrite(STDERR, print_r($response, TRUE));
 
         $response->assertStatus(200);
     }
