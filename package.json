@@ -11,7 +11,7 @@
     "check_versions": "ncu"
   },
   "devDependencies": {
-    "axios": "0.18.0",
+    "axios": "0.19.2",
     "bootstrap": "4.0.0",
     "cross-env": "5.1.3",
     "font-awesome": "4.7.0",
