@@ -1,7 +1,10 @@
 window._ = require('lodash');
+window.$ = require('jquery');
+require('popper.js');
+require('bootstrap');
 
 /**
- * We'll load the axios HTTP library which allows us to easily issue requests
+ * We'll load the axios HTTP library whic @popperjs/coreh allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
@@ -9,6 +12,10 @@ window._ = require('lodash');
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+$(document).ready(() => {
+    // $('.collapse').collapse()
+});
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

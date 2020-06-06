@@ -3,6 +3,6 @@
 if (!function_exists('formatStatus')) {
     function formatStatus(bool $status): string
     {
-        return $status ? 'Healthy' : 'Unhealthy';
+        return __('health_status.index.' . ($status ? 'healthy' : 'unhealthy'));
     }
 }
