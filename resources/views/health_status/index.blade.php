@@ -6,12 +6,14 @@
     @foreach ($servers as $name => $serverInfo)
         <h2 class="mt-5">{{ $name }}</h2>
 
+        <p class="text-muted">
+            {{ __('health_status.index.check_performed_at') }}
+
+            {{ $serverInfo->check_performed_at }}
+        </p>
+
         <div class="card">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item d-flex justify-content-between">
-                    <div>{{ __('health_status.index.check_performed_at') }}</div>
-                    <div>{{ $serverInfo->check_performed_at }}</div>
-                </li>
                 <li class="list-group-item d-flex justify-content-between">
                     <div>{{ __('health_status.index.database') }}</div>
                     <div>@include('shared._status', ['status' => $serverInfo->database])</div>
