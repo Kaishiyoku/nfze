@@ -9,15 +9,12 @@
         <p class="text-muted">
             {{ __('health_status.index.check_performed_at') }}
 
-            {{ $serverInfo->check_performed_at }}
+            {{ $serverInfo->check_performed_at }}<br/>
+            {{ __('health_status.index.ping') }}: {{ $serverInfo->ping }}ms
         </p>
 
         <div class="card">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item d-flex justify-content-between">
-                    <div>{{ __('health_status.index.ping') }}</div>
-                    <div>{{ $serverInfo->ping }}ms</div>
-                </li>
                 <li class="list-group-item d-flex justify-content-between">
                     <div>{{ __('health_status.index.database') }}</div>
                     <div>@include('shared._status', ['status' => $serverInfo->database])</div>
