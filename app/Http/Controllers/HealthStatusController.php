@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Server;
-use Illuminate\Http\Request;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 
 class HealthStatusController extends Controller
@@ -12,7 +12,11 @@ class HealthStatusController extends Controller
     {
         $servers = Server::all();
         $servers = $servers->mapWithKeys(function (Server $server) {
-            $serverInfo = json_decode(Http::get($server->url)->body());
+            $start = Carbon::now();
+            $serverInfo = Http::get($server->url)->object();
+            $end = Carbon::now();
+
+            $serverInfo->ping = $end->diffInMilliseconds($start);
 
             return [$server->name => $serverInfo];
         });

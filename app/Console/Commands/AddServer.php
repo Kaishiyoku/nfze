@@ -39,10 +39,12 @@ class AddServer extends Command
     public function handle()
     {
         $name = $this->ask('Name');
+        $ip = $this->ask('Ip');
         $url = $this->ask('Url');
 
         $server = new Server();
         $server->name = $name;
+        $server->ip = $ip;
         $server->url = $url;
 
         $server->save();

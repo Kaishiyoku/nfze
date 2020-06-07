@@ -15,6 +15,10 @@
         <div class="card">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item d-flex justify-content-between">
+                    <div>{{ __('health_status.index.ping') }}</div>
+                    <div>{{ $serverInfo->ping }}ms</div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
                     <div>{{ __('health_status.index.database') }}</div>
                     <div>@include('shared._status', ['status' => $serverInfo->database])</div>
                 </li>
