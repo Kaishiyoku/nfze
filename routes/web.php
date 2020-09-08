@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HealthStatusController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HealthStatusController@index');
+Route::get('/', [HealthStatusController::class, 'index']);
