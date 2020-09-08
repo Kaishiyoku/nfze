@@ -14,16 +14,17 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="bg-gray-100">
 
-<div id="app">
-    <main class="container py-4">
+<div id="app" class="container mx-auto py-8 px-20">
+    <main>
         @yield('content')
     </main>
 
-    <footer>
-        <div class="container pt-5 pb-2 text-muted">
+    <footer class="mt-20 text-gray-600">
+        <div>
             <span>v{{ env('APP_VERSION') }}</span>
         </div>
     </footer>

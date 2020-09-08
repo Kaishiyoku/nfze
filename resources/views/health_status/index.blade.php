@@ -1,47 +1,59 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="mb-5">{{ __('health_status.index.title') }}</h1>
+    <h1 class="text-4xl mb-8">{{ __('health_status.index.title') }}</h1>
 
-    @foreach ($servers as $name => $serverInfo)
-        <h2 class="mt-5">{{ $name }}</h2>
+    <div class="grid grid-cols-2 gap-4">
+        <?php $i = 0; ?>
+        @foreach ($servers as $name => $serverInfo)
+            <div class="rounded overflow-hidden shadow-lg border border-gray-200 bg-white px-6 py-4 {{ ($i === 0 ? 'col-span-2' : '') }}">
+                <h2 class="text-3xl mb-6">{{ $name }}</h2>
 
-        <p class="text-muted">
-            {{ __('health_status.index.check_performed_at') }}
+                <div>
+                    <div>
+                        <div class="mb-2 text-gray-700">
+                            {{ __('health_status.index.check_performed_at') }}
+                            {{ $serverInfo->check_performed_at }}
+                        </div>
 
-            {{ $serverInfo->check_performed_at }}<br/>
-            {{ __('health_status.index.ping') }}: {{ $serverInfo->ping }}ms
-        </p>
+                        <div class="mb-2 text-gray-700">
+                            {{ __('health_status.index.ping') }}: {{ $serverInfo->ping }}ms
+                        </div>
 
-        <div class="card">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item d-flex justify-content-between">
-                    <div>{{ __('health_status.index.database') }}</div>
-                    <div>@include('shared._status', ['status' => $serverInfo->database])</div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between">
-                    <div>{{ __('health_status.index.cache') }}</div>
-                    <div>@include('shared._status', ['status' => $serverInfo->redis])</div>
-                </li>
-            </ul>
-        </div>
+                        <div class="flex justify-between py-2 border-b border-gray-200">
+                            <div>{{ __('health_status.index.database') }}</div>
+                            <div>@include('shared._status', ['status' => $serverInfo->database])</div>
+                        </div>
 
-        <div class="card mt-4">
-            <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#{{ Str::slug($name) }}-websites" aria-expanded="true" aria-controls="{{ Str::slug($name) }}-websites">
-                        {{ __('health_status.index.websites') }}
-                    </button>
-                </h2>
+                        <div class="flex justify-between py-2 border-b border-gray-200">
+                            <div>{{ __('health_status.index.cache') }}</div>
+                            <div>@include('shared._status', ['status' => $serverInfo->redis])</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <button
+                            type="button"
+                            class="flex justify-between items-center w-full mb-4 text-left hover:bg-blue-500 text-blue-700 hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded outline-none focus:shadow-outline transition-bg duration-200"
+                            data-hc-control="{{ \Illuminate\Support\Str::slug($name) }}-websites"
+                        >
+                            <span>{{ __('health_status.index.websites') }}</span>
+                            <i class="fas fa-arrow-circle-down"></i>
+                        </button>
+
+                        <div data-hc-content="{{ \Illuminate\Support\Str::slug($name) }}-websites">
+                            @foreach ($serverInfo->websites as $url => $websiteStatus)
+                                <div class="flex justify-between py-2 border-b border-gray-200">
+                                    <div>{{ $url }}</div>
+                                    <div>@include('shared._status', ['status' => $websiteStatus])</div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
             </div>
-            <ul class="list-group list-group-flush collapse" id="{{ Str::slug($name) }}-websites">
-                @foreach ($serverInfo->websites as $url => $websiteStatus)
-                    <li class="list-group-item d-flex justify-content-between">
-                        <div>{{ $url }}</div>
-                        <div>@include('shared._status', ['status' => $websiteStatus])</div>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-    @endforeach
+
+            <?php $i++; ?>
+        @endforeach
+    </div>
 @endsection
