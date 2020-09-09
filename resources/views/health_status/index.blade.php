@@ -49,7 +49,7 @@
                             @foreach ($serverInfo->websites as $url => $websiteStatus)
                                 <div class="flex justify-between py-2 border-b border-gray-200">
                                     <div>{{ $url }}</div>
-                                    <div class="h-4 w-4">@include('shared._status', ['status' => $websiteStatus])</div>
+                                    <div class="pt-1 h-4 w-4">@include('shared._status', ['status' => $websiteStatus])</div>
                                 </div>
                             @endforeach
                         </div>
