@@ -42,4 +42,6 @@ import HandyCollapse from 'handy-collapse';
 //     forceTLS: true
 // });
 
-new HandyCollapse();
+new HandyCollapse({
+    closeOthers: false,
+});
