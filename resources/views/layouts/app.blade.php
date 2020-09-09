@@ -18,7 +18,7 @@
 </head>
 <body class="bg-gray-100">
 
-<div id="app" class="container mx-auto py-8 px-20">
+<div id="app" class="container mx-auto py-8 px-4 lg:px-20">
     <main>
         @yield('content')
     </main>
