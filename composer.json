@@ -9,10 +9,11 @@
     "license": "MIT",
     "require": {
         "php": "^7.3",
+        "austinb/gameq": "3.0.15",
         "fideloper/proxy": "4.4.0",
         "fruitcake/laravel-cors": "2.0.2",
-        "guzzlehttp/guzzle": "7.0.1",
-        "laravel/framework": "8.0.3",
+        "guzzlehttp/guzzle": "7.1.0",
+        "laravel/framework": "8.6.0",
         "laravel/tinker": "2.4.2"
     },
     "require-dev": {
