@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Enums\ServerType;
 use App\Server;
 use Illuminate\Console\Command;
 
@@ -39,17 +38,13 @@ class AddServer extends Command
      */
     public function handle()
     {
-        $type = $this->anticipate('Type (' . implode(', ', ServerType::toArray()) . ')', ServerType::toArray());
         $name = $this->ask('Name');
         $ip = $this->ask('Ip');
-        $port = $this->ask('Port');
         $url = $this->ask('Url');
 
         $server = new Server();
-        $server->type = $type;
         $server->name = $name;
         $server->ip = $ip;
-        $server->port = $port;
         $server->url = $url;
 
         $server->save();
