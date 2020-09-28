@@ -29,6 +29,13 @@
                             <div class="py-2">{{ __('health_status.index.cache') }}</div>
                             <div class="h-4 w-4">@include('shared._status', ['status' => $serverInfo->redis])</div>
                         </div>
+
+                        @foreach ($serverInfo->teamspeak_servers as $name => $teamspeakServerStatus)
+                            <div class="flex justify-between border-b border-gray-200 items-center">
+                                <div class="py-2">{{ __('health_status.index.teamspeak_server', ['name' => $name]) }}</div>
+                                <div class="h-4 w-4">@include('shared._status', ['status' => $teamspeakServerStatus])</div>
+                            </div>
+                        @endforeach
                     </div>
 
                     <div class="mt-8">

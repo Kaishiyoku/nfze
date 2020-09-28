@@ -11,6 +11,7 @@ return [
         'websites' => 'Websites',
         'healthy' => 'Healthy',
         'unhealthy' => 'Unhealthy',
+        'teamspeak_server' => 'TeamSpeak server ":name"',
     ],
 
 ];
