@@ -30,12 +30,14 @@
                             <div class="h-4 w-4">@include('shared._status', ['status' => $serverInfo->redis])</div>
                         </div>
 
-                        @foreach ($serverInfo->teamspeak_servers as $name => $teamspeakServerStatus)
-                            <div class="flex justify-between border-b border-gray-200 items-center">
-                                <div class="py-2">{{ __('health_status.index.teamspeak_server', ['name' => $name]) }}</div>
-                                <div class="h-4 w-4">@include('shared._status', ['status' => $teamspeakServerStatus])</div>
-                            </div>
-                        @endforeach
+                        @if ($serverInfo->teamspeak_server)
+                            @foreach ($serverInfo->teamspeak_server as $name => $teamspeakServerStatus)
+                                <div class="flex justify-between border-b border-gray-200 items-center">
+                                    <div class="py-2">{{ __('health_status.index.teamspeak_server', ['name' => $name]) }}</div>
+                                    <div class="h-4 w-4">@include('shared._status', ['status' => $teamspeakServerStatus])</div>
+                                </div>
+                            @endforeach
+                        @endif
                     </div>
 
                     <div class="mt-8">
