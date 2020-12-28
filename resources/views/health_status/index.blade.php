@@ -20,19 +20,19 @@
                             {{ __('health_status.index.ping') }}: {{ $serverInfo->ping }}ms
                         </div>
 
-                        <div class="flex justify-between py-2 border-b border-gray-200">
+                        <div class="flex justify-between py-2 border-b border-gray-100">
                             <div>{{ __('health_status.index.database') }}</div>
                             <div class="h-4 w-4">@include('shared._status', ['status' => $serverInfo->database])</div>
                         </div>
 
-                        <div class="flex justify-between border-b border-gray-200 items-center">
+                        <div class="flex justify-between border-b border-gray-100 items-center">
                             <div class="py-2">{{ __('health_status.index.cache') }}</div>
                             <div class="h-4 w-4">@include('shared._status', ['status' => $serverInfo->redis])</div>
                         </div>
 
                         @if ($serverInfo->teamspeak_server)
                             @foreach ($serverInfo->teamspeak_server as $name => $teamspeakServerStatus)
-                                <div class="flex justify-between border-b border-gray-200 items-center">
+                                <div class="flex justify-between border-b border-gray-100 items-center">
                                     <div class="py-2">{{ __('health_status.index.teamspeak_server', ['name' => $name]) }}</div>
                                     <div class="h-4 w-4">@include('shared._status', ['status' => $teamspeakServerStatus])</div>
                                 </div>
@@ -56,7 +56,7 @@
 
                         <div data-hc-content="{{ \Illuminate\Support\Str::slug($name) }}-websites">
                             @foreach ($serverInfo->websites as $url => $websiteStatus)
-                                <div class="flex justify-between py-2 border-b border-gray-200">
+                                <div class="flex justify-between py-2 border-b border-gray-100">
                                     <div>{{ $url }}</div>
                                     <div class="pt-1 h-4 w-4">@include('shared._status', ['status' => $websiteStatus])</div>
                                 </div>

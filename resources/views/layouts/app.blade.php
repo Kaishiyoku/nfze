@@ -15,14 +15,14 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-50">
 
 <div id="app" class="container mx-auto py-8 px-4 lg:px-20">
     <main>
         @yield('content')
     </main>
 
-    <footer class="mt-20 text-gray-600">
+    <footer class="mt-20 text-gray-400">
         <div>
             <span>v{{ env('APP_VERSION') }}</span>
         </div>
