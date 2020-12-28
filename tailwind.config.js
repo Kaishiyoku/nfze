@@ -12,6 +12,7 @@ module.exports = {
             },
             colors: {
                 gray: colors.warmGray,
+                red: colors.pink,
             },
         },
         screens: {
