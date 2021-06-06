@@ -12,6 +12,7 @@ return [
         'healthy' => 'Healthy',
         'unhealthy' => 'Unhealthy',
         'teamspeak_server' => 'TeamSpeak server ":name"',
+        'server_not_reachable' => 'Server not reachable.',
     ],
 
 ];

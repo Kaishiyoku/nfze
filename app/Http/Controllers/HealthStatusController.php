@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Server;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Support\Facades\Http;
 
 class HealthStatusController extends Controller
@@ -13,10 +14,16 @@ class HealthStatusController extends Controller
         $servers = Server::all();
         $servers = $servers->mapWithKeys(function (Server $server) {
             $start = Carbon::now();
-            $serverInfo = Http::get($server->url)->object();
-            $end = Carbon::now();
 
-            $serverInfo->ping = $end->diffInMilliseconds($start);
+            try {
+                $serverInfo = Http::get($server->url)->object();
+
+                $end = Carbon::now();
+
+                $serverInfo->ping = $end->diffInMilliseconds($start);
+            } catch (Exception $e) {
+                $serverInfo = null;
+            }
 
             return [$server->name => $serverInfo];
         });
